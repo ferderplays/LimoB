@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(../assets/web_background.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.search-box-container {
+    position: absolute;
+    top: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar-form {
+    background: rgba(0, 0, 0, 0.45);
+    width: 600px;
+    height: 75px;
+    display: flex;
+    border-radius: 50px;
+}
+
+.search-bar-box {
+    width: 525px;
+    height: 74px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid lime;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.search-bar-button {
+    background: rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 50px;
+    height: 75px;
+    width: 75px;
+}
+
+.search-icon svg {
+    height: 50px;
+    width: 50px;
+}
