@@ -1,0 +1,36 @@
+{
+  "name": "limobl",
+  "version": "1.0.0",
+  "description": "web browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferderplays/LimoB.git"
+  },
+  "author": "limodevelopment",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ferderplays/LimoB/issues"
+  },
+  "homepage": "https://github.com/ferderplays/LimoB#readme",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "fs": "0.0.1-security",
+    "os": "^0.1.2"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.65",
+    "@electron-forge/maker-deb": "^6.0.0-beta.65",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.65",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.65",
+    "@electron-forge/maker-zip": "^6.0.0-beta.65",
+    "electron": "^20.1.1"
+  },
+  "config": {}
+}
