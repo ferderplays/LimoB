@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-        <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval';">
         <title>LIMO Browser bz LIMO development</title>
         <link rel="stylesheet" href="../styles/newtab.css">
     </head>
@@ -190,35 +190,53 @@
                 <div class="settings-box" id="settingsbox" style="display: none;">
                     <div>
                         <label>Searchbar Background Color</label>
-                        <input type="text" id="bgclrtxt" class="backgroundcolorbackup">
+                        <br>
+                        <input type="color" id="bgclrtxt" class="backgroundcolorbackup">
                     </div>
                     <div>
                         <label>Textbar Border Color</label>
-                        <input type="text" id="brclrtxt" class="bordercolorbackup">
+                        <br>
+                        <input type="color" id="brclrtxt" class="bordercolorbackup">
                     </div>
                     <div>
                         <label>Search Button Background Color</label>
-                        <input type="text" id="sbclrtxt" class="searchbuttoncolorbackup">
+                        <br>
+                        <input type="color" id="sbclrtxt" class="searchbuttoncolorbackup">
                     </div>
                     <div>
                         <label>Search Icon Color</label>
-                        <input type="text" id="siclrtxt" class="searchiconcolorbackup">
+                        <br>
+                        <input type="color" id="siclrtxt" class="searchiconcolorbackup">
                     </div>
                     <div>
                         <label>Go-To-Domain Icon Color</label>
-                        <input type="text" id="gtdiclrtxt" class="gotodomaincolorbackup">
+                        <br>
+                        <input type="color" id="gtdiclrtxt" class="gotodomaincolorbackup">
                     </div>
                     <div>
                         <label>Header Background Color</label>
-                        <input type="text" id="hdrclrtxt" class="headercolorbackup">
+                        <br>
+                        <input type="color" id="hdrclrtxt" class="headercolorbackup">
                     </div>
                     <div>
                         <label>Settings Box Background Color</label>
-                        <input type="text" id="sbbgclrtxt" class="settingsboxcolorbackup">
+                        <br>
+                        <input type="color" id="sbbgclrtxt" class="settingsboxcolorbackup">
                     </div>
                     <div>
                         <label>Settings Box Border Color</label>
-                        <input type="text" id="sbbcclrtxt" class="settingsboxbordercolorbackup">
+                        <br>
+                        <input type="color" id="sbbcclrtxt" class="settingsboxbordercolorbackup">
+                    </div>
+                    <div>
+                        <label>Caret Color</label>
+                        <br>
+                        <input type="color" id="ccclrtxt" class="caretcolorcolorbackup">
+                    </div>
+                    <div>
+                        <label>Text Size</label>
+                        <br>
+                        <input type="number" min="0" max="100"  id="tsztxt" class="textsizebackup">
                     </div>
                     <button id="applybtn">Apply</button>
                 </div>

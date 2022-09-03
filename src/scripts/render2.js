@@ -28,6 +28,8 @@ function setDisplay(displayval) {
 
 function loadColors() {
     // value
+    const tsize = document.getElementById('tsztxt')
+    const ccolor = document.getElementById("ccclrtxt").value
     const bgcolor = document.getElementById("bgclrtxt").value
     const brcolor = document.getElementById("brclrtxt").value
     const sbcolor = document.getElementById("sbclrtxt").value
@@ -36,11 +38,14 @@ function loadColors() {
     const gtdicolor = document.getElementById("gtdiclrtxt").value
     const sbbgcolor = document.getElementById("sbbgclrtxt").value
     const sbbccolor = document.getElementById("sbbcclrtxt").value
+    
 
     // elements
+    const bodyelem = document.querySelector("body")
     const headerelem = document.querySelector('header')
     const settingsbox = document.querySelector('.settings-box')
     const searchbar = document.querySelector('.search-bar-form')
+    
     const searchbartext = document.querySelector('.search-bar-box')
     const searchbarbutton = document.querySelector('.search-bar-button')
     const searchbaricon = document.querySelectorAll('.search-icon svg path')
@@ -50,6 +55,8 @@ function loadColors() {
     searchbaricon.forEach(path => {
         setStyle(path, 'fill', sicolor)
     })
+    setStyle(bodyelem, 'font-size', tsize)
+    setStyle(bodyelem, 'caret-color', ccolor)
     setStyle(searchbar, 'background', bgcolor)
     setStyle(gotodomainicon, 'fill', gtdicolor)
     setStyle(headerelem, 'background', hdrcolor)

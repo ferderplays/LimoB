@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/ferderplays/LimoB#readme",
   "dependencies": {
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "os": "^0.1.2"
   },
   "devDependencies": {
     "electron": "^20.1.1"

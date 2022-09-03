@@ -22,9 +22,11 @@ const createWindow = () => {
       NodeIterator: false
     }
   })
-  // and load the index.html of the app.
+
+  // window set
   window.loadFile('./src/index.html')
   window.on('ready-to-show', window.show)
+  window.setIcon('./src/assets/limoblogo.png')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
