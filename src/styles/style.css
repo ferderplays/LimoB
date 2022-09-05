@@ -96,6 +96,21 @@ body {
     border-bottom: 2px solid lime;
 }
 
+.toolkit-box-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100px;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.toolkit-box-container button {
+    background: transparent;
+}
+
 .navbar-theme-container {
     position: absolute;
     right: 450px;
@@ -221,6 +236,12 @@ header {
     background: rgb(0, 150, 0);
     color: black;
     font-weight: bold;
+
+}
+
+.settings-inner-box {
+    width: 250px;
+    height: calc(100% - 75px);
     text-align: justify;
     overflow-y: auto;
 }

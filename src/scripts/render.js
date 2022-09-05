@@ -114,3 +114,24 @@ function loadColors() {
 function setStyle(element, styleval, value) {
     element.style[styleval] = value
 }
+
+const backb = document.getElementById("backbtn")
+const reloadb = document.getElementById("reloadbtn")
+const forwardb = document.getElementById("forwardbtn")
+const webview = document.querySelector('webview#newtab')
+
+forwardb.onclick = () => {
+    if (webview.canGoForward()) {
+        webview.goForward()
+    }
+}
+
+reloadb.onclick = () => {
+    webview.reload()
+}
+
+backb.onclick = () => {
+    if (webview.canGoBack()) {
+        webview.goBack()
+    }
+}
