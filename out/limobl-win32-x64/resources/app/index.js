@@ -27,6 +27,7 @@ const createWindow = () => {
   window.loadFile('./src/index.html')
   window.on('ready-to-show', window.show)
   window.setIcon('./src/assets/limoblogo.png')
+  window.maximize()
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
@@ -65,4 +66,8 @@ ipcMain.on("app/minimize", () => {
 
 ipcMain.on("app/maximize", () => {
   window.maximize()
+})
+
+ipcMain.on("app/devtools", () => {
+  window.webContents.openDevTools()
 })

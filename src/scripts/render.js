@@ -53,6 +53,8 @@ urlbarbtn.onclick = () => {
     const urlbartxt = document.getElementById("urlbarbox")
     if (urlbartxt.value == '/newtab') {
         newtab.setAttribute("src", "./newline/index.html")
+    } else if (urlbartxt.value.endsWith(".onion")) {
+        newtab.setAttribute("src", "./blocked/index.html")
     } else {
         newtab.setAttribute("src", "https://" + urlbartxt.value)
     }
@@ -117,6 +119,7 @@ function setStyle(element, styleval, value) {
 
 const backb = document.getElementById("backbtn")
 const reloadb = document.getElementById("reloadbtn")
+const dtbtn = document.getElementById("devtoolsbtn")
 const forwardb = document.getElementById("forwardbtn")
 const webview = document.querySelector('webview#newtab')
 
@@ -124,6 +127,10 @@ forwardb.onclick = () => {
     if (webview.canGoForward()) {
         webview.goForward()
     }
+}
+
+dtbtn.onclick = () => {
+    app.window.devtools()
 }
 
 reloadb.onclick = () => {

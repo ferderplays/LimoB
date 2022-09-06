@@ -260,7 +260,7 @@ input:focus {
 .url-bar-container {
     position: absolute;
     top: 5px;
-    width: 325px;
+    width: 35%;
     height: 65px;
     border-radius: 25px;
 }
@@ -274,7 +274,7 @@ input:focus {
     top: 5px;
     left: 25px;
     height: 50px;
-    width: 220px;
+    width: calc(100% - 125px);
     background: transparent;
     border: 1px solid;
     border-color: black;
@@ -284,7 +284,7 @@ input:focus {
 .url-bar-container button {
     position: relative;
     top: 5px;
-    left: 255px;
+    left: calc(100% - 75px);
     height: 50px;
     width: 50px;
     background: transparent;

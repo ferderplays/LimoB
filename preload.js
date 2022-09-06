@@ -18,7 +18,8 @@ const API = {
   window: {
     close: () => ipcRenderer.send("app/close"),
     minimize: () => ipcRenderer.send("app/minimize"),
-    maximize: () => ipcRenderer.send("app/maximize")
+    maximize: () => ipcRenderer.send("app/maximize"), 
+    devtools: () => ipcRenderer.send("app/devtools")
   }
 }
 
