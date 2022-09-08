@@ -188,8 +188,6 @@ body {
     position: absolute;
     top: 0;
     left: 102px;
-    width: 50%;
-    height: 800px;
 }
 
 .discord-logo circle {
@@ -243,7 +241,7 @@ header {
     width: 250px;
     height: calc(100% - 75px);
     text-align: justify;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .settings-box input {

@@ -53,6 +53,12 @@ urlbarbtn.onclick = () => {
     const urlbartxt = document.getElementById("urlbarbox")
     if (urlbartxt.value == '/newtab') {
         newtab.setAttribute("src", "./newline/index.html")
+    } else if (urlbartxt.value.includes("github") && !(urlbartxt.value.startsWith("github.com"))) {
+        newtab.setAttribute("src", "./blocked/index.html")
+    } else if (urlbartxt.value.includes("google") && !(urlbartxt.value.startsWith("google.com"))) {
+        newtab.setAttribute("src", "./blocked/index.html")
+    } else if (urlbartxt.value.includes("youtube") && !(urlbartxt.value.startsWith("youtube.com"))) {
+        newtab.setAttribute("src", "./blocked/index.html")
     } else if (urlbartxt.value.endsWith(".onion")) {
         newtab.setAttribute("src", "./blocked/index.html")
     } else {

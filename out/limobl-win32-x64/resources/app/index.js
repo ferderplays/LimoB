@@ -19,7 +19,8 @@ const createWindow = () => {
       javascript: true,
       contextIsolation: true,
       allowRunningInsecureContent: true,
-      NodeIterator: false
+      nodeIntegration: true,
+      nodeIntegrationInSubFrames: true
     }
   })
 
