@@ -1,5 +1,8 @@
 const discordinbrowser = document.getElementById("discordwebframe")
+const instagrambutton = document.getElementById("instagramlogo")
 const discordbutton = document.getElementById("discordlogo")
+const netflixbutton = document.getElementById("netflixlogo")
+const tiktokbutton = document.getElementById("tiktoklogo")
 const maximizeapp = document.getElementById("maximizebtn")
 const minimizeapp = document.getElementById("minimizebtn")
 const urlbarbtn = document.getElementById("urlbarbutton")
@@ -8,8 +11,20 @@ const bodyelem = document.getElementById("tochange")
 
 let isShow = false
 
+instagrambutton.addEventListener("click", function() {
+    app.window.igwidget()
+})
+
 discordbutton.addEventListener("click", function() {
-    toggleDiscord()
+    app.window.dscwidget()
+})
+
+netflixbutton.addEventListener("click", function() {
+    app.window.nfwidget()
+})
+
+tiktokbutton.addEventListener("click", function() {
+    app.window.ttwidget()
 })
 
 maximizeapp.addEventListener("click", function() {
@@ -58,6 +73,8 @@ urlbarbtn.onclick = () => {
     } else if (urlbartxt.value.includes("google") && !(urlbartxt.value.startsWith("google.com"))) {
         newtab.setAttribute("src", "./blocked/index.html")
     } else if (urlbartxt.value.includes("youtube") && !(urlbartxt.value.startsWith("youtube.com"))) {
+        newtab.setAttribute("src", "./blocked/index.html")
+    } else if (urlbartxt.value.includes("codepen") && !(urlbartxt.value.startsWith("codepen.io"))) {
         newtab.setAttribute("src", "./blocked/index.html")
     } else if (urlbartxt.value.endsWith(".onion")) {
         newtab.setAttribute("src", "./blocked/index.html")

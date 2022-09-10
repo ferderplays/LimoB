@@ -2,6 +2,7 @@
 
 // Modules to control application life and create native browser window
 const { app, BrowserWindow, ipcMain } = require('electron')
+const electron = require('electron');
 const path = require('path')
 
 let window;
@@ -71,4 +72,48 @@ ipcMain.on("app/maximize", () => {
 
 ipcMain.on("app/devtools", () => {
   window.webContents.openDevTools()
+})
+
+ipcMain.on("app/discordwidget", () => {
+  let dscwgt = new BrowserWindow({
+    width: 800,
+    height: 800,
+    title: 'Discord - LIMO Browser',
+    autoHideMenuBar: true
+  })
+  dscwgt.loadURL("https://www.discord.com/app")
+  dscwgt.setAlwaysOnTop(true)
+})
+
+ipcMain.on("app/instagramwidget", () => {
+  let igwgt = new BrowserWindow({
+    width: 800,
+    height: 800,
+    title: 'Instagram - LIMO Browser',
+    autoHideMenuBar: true
+  })
+  igwgt.loadURL("https://www.instagram.com/")
+  igwgt.setAlwaysOnTop(true)
+})
+
+ipcMain.on("app/tiktokwidget", () => {
+  let ttwgt = new BrowserWindow({
+    width: 800,
+    height: 800,
+    title: 'Tiktok - LIMO Browser',
+    autoHideMenuBar: true
+  })
+  ttwgt.loadURL("https://www.tiktok.com/")
+  ttwgt.setAlwaysOnTop(true)
+})
+
+ipcMain.on("app/netflixwidget", () => {
+  let nfwgt = new BrowserWindow({
+    width: 800,
+    height: 800,
+    title: 'Netflix - LIMO Browser',
+    autoHideMenuBar: true
+  })
+  nfwgt.loadURL("https://www.netflix.com/")
+  nfwgt.setAlwaysOnTop(true)
 })

@@ -19,7 +19,11 @@ const API = {
     close: () => ipcRenderer.send("app/close"),
     minimize: () => ipcRenderer.send("app/minimize"),
     maximize: () => ipcRenderer.send("app/maximize"), 
-    devtools: () => ipcRenderer.send("app/devtools")
+    devtools: () => ipcRenderer.send("app/devtools"),
+    ttwidget: () => ipcRenderer.send("app/tiktokwidget"),
+    nfwidget: () => ipcRenderer.send("app/netflixwidget"),
+    dscwidget: () => ipcRenderer.send("app/discordwidget"), 
+    igwidget: () => ipcRenderer.send("app/instagramwidget")
   }
 }
 

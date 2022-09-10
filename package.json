@@ -1,6 +1,6 @@
 {
   "name": "limobl",
-  "version": "7.0.0",
+  "version": "8.0.0",
   "description": "web browser",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,8 @@
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
     "fs": "0.0.1-security",
-    "os": "^0.1.2"
+    "os": "^0.1.2",
+    "readline": "^1.3.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.65",

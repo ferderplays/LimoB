@@ -190,6 +190,23 @@ body {
     left: 102px;
 }
 
+.tiktok-logo {
+    font-size: 75px;
+    color: lightskyblue;
+}
+
+.tiktok-logo::after {
+    content: 't';
+    position: absolute;
+    left: 25px;
+    color: black;
+}
+
+.netflix-logo {
+    font-size: 75px;
+    color: darkred;
+}
+
 .discord-logo circle {
     transition: all 1s;
 }
