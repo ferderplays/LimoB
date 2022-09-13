@@ -9,7 +9,7 @@ body {
 
 .search-box-container {
     position: absolute;
-    top: 150px;
+    top: 100px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -17,31 +17,39 @@ body {
 
 .search-bar-form {
     background: rgba(0, 0, 0, 0.45);
-    width: 600px;
-    height: 75px;
+    width: 500px;
+    height: 50px;
     display: flex;
     border-radius: 50px;
 }
 
+input:focus {
+    outline: none;
+}
+
 .search-bar-box {
-    width: 525px;
-    height: 74px;
+    width: 450px;
+    height: 49px;
     background: transparent;
     border: none;
     border-bottom: 1px solid lime;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
+    caret-color: lime;
+    color: rgb(15, 15, 15);
+    font-size: 25px;
 }
 
 .search-bar-button {
     background: rgba(0, 0, 0, 0.25);
     border: none;
     border-radius: 50px;
-    height: 75px;
-    width: 75px;
+    height: 50px;
+    width: 50px;
 }
 
 .search-icon svg {
-    height: 50px;
-    width: 50px;
+    fill: lime;
+    height: 25px;
+    width: 25px;
 }

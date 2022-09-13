@@ -21,12 +21,13 @@ const createWindow = () => {
       contextIsolation: true,
       allowRunningInsecureContent: true,
       nodeIntegration: true,
-      nodeIntegrationInSubFrames: true
     }
   })
 
   // window set
-  window.loadFile('./src/index.html')
+  window.loadFile('./src/index.html', { 
+    userAgent: 'Chrome'
+  })
   window.on('ready-to-show', window.show)
   window.setIcon('./src/assets/limoblogo.png')
   window.maximize()
@@ -74,6 +75,20 @@ ipcMain.on("app/devtools", () => {
   window.webContents.openDevTools()
 })
 
+ipcMain.on("app/utilsimpl", () => {
+  let iwgt = new BrowserWindow({
+    width: 800,
+    height: 800,
+    title: 'Controll panel - LIMO Browser',
+    autoHideMenuBar: true,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
+  iwgt.loadFile("./src/utils/index.html")
+  iwgt.setAlwaysOnTop(true)
+})
+
 ipcMain.on("app/discordwidget", () => {
   let dscwgt = new BrowserWindow({
     width: 800,
@@ -96,6 +111,28 @@ ipcMain.on("app/instagramwidget", () => {
   igwgt.setAlwaysOnTop(true)
 })
 
+ipcMain.on("app/redditwidget", () => {
+  let rwgt = new BrowserWindow({
+    width: 800,
+    height: 800,
+    title: 'Reddit - LIMO Browser',
+    autoHideMenuBar: true
+  })
+  rwgt.loadURL("https://www.reddit.com/")
+  rwgt.setAlwaysOnTop(true)
+})
+
+ipcMain.on("app/steampoweredwidget", () => {
+  let spwgt = new BrowserWindow({
+    width: 800,
+    height: 800,
+    title: 'Steam Powered - LIMO Browser',
+    autoHideMenuBar: true
+  })
+  spwgt.loadURL("https://store.steampowered.com/")
+  spwgt.setAlwaysOnTop(true)
+})
+
 ipcMain.on("app/tiktokwidget", () => {
   let ttwgt = new BrowserWindow({
     width: 800,
@@ -116,4 +153,16 @@ ipcMain.on("app/netflixwidget", () => {
   })
   nfwgt.loadURL("https://www.netflix.com/")
   nfwgt.setAlwaysOnTop(true)
+})
+
+ipcMain.on("app/headphoneswidget", () => {
+  let hpwgt = new BrowserWindow({
+    width: 800,
+    height: 800,
+    title: 'Youtube Music - LIMO Browser',
+    autoHideMenuBar: true
+  })
+
+  hpwgt.loadURL("https://music.youtube.com")
+  hpwgt.setAlwaysOnTop(false)
 })

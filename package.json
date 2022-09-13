@@ -1,6 +1,6 @@
 {
   "name": "limobl",
-  "version": "8.0.0",
+  "version": "9.7.0",
   "description": "web browser",
   "main": "index.js",
   "scripts": {

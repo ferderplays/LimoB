@@ -1,7 +1,10 @@
+const steampoweredbutton = document.getElementById("steampoweredlogo")
 const discordinbrowser = document.getElementById("discordwebframe")
 const instagrambutton = document.getElementById("instagramlogo")
+const implbutton = document.getElementById("utilsimplbutton")
 const discordbutton = document.getElementById("discordlogo")
 const netflixbutton = document.getElementById("netflixlogo")
+const redditbutton = document.getElementById("redditlogo")
 const tiktokbutton = document.getElementById("tiktoklogo")
 const maximizeapp = document.getElementById("maximizebtn")
 const minimizeapp = document.getElementById("minimizebtn")
@@ -11,8 +14,17 @@ const bodyelem = document.getElementById("tochange")
 
 let isShow = false
 
+
+steampoweredbutton.addEventListener("click", function() {
+    app.window.spwrwidget()
+})
+
 instagrambutton.addEventListener("click", function() {
     app.window.igwidget()
+})
+
+implbutton.addEventListener("click", function() {
+    app.window.utilsimpl()
 })
 
 discordbutton.addEventListener("click", function() {
@@ -21,6 +33,10 @@ discordbutton.addEventListener("click", function() {
 
 netflixbutton.addEventListener("click", function() {
     app.window.nfwidget()
+})
+
+redditbutton.addEventListener("click", function() {
+    app.window.rwidget()
 })
 
 tiktokbutton.addEventListener("click", function() {
@@ -43,7 +59,7 @@ const settingsbar = document.getElementById('settingsbox')
 const settingsbtn = document.getElementById('settingsbutton')
 const applybtn = document.getElementById('applybtn')
 
-let isShown = false;
+let isShown = false, isShown2 = false;
 
 settingsbtn.onclick = () => {
     toggleSettings()
@@ -63,10 +79,30 @@ function toggleDiscord() {
     }
 }
 
+const colorselectionmenu = document.querySelector(".settings-inner-box")
+const occmbtn = document.getElementById("occmbtn")
+
+occmbtn.onclick = () => {
+    toggleColorSecletion()
+}
+
+function toggleColorSecletion() {
+    if (isShown2) {
+        colorselectionmenu.style.display = "none"
+        isShown2 = false
+    } else {
+        colorselectionmenu.style.display = "block"
+        isShown2 = true
+    }
+}
+
+const newtab = document.getElementById("newtab")
+const urlbartxt = document.getElementById("urlbarbox")
+
 urlbarbtn.onclick = () => {
-    const newtab = document.getElementById("newtab")
-    const urlbartxt = document.getElementById("urlbarbox")
-    if (urlbartxt.value == '/newtab') {
+    if (urlbartxt.value.includes(".") && urlbartxt.value.includes(" ") || urlbartxt.value.includes(" ") || !urlbartxt.value.includes(".")) {
+        newtab.setAttribute("src", "https://google.com/search?q=" + urlbartxt.value + "&client=limob&clientdev=limodevelopment")
+    } else if (urlbartxt.value == '/newtab') {
         newtab.setAttribute("src", "./newline/index.html")
     } else if (urlbartxt.value.includes("github") && !(urlbartxt.value.startsWith("github.com"))) {
         newtab.setAttribute("src", "./blocked/index.html")
@@ -78,6 +114,10 @@ urlbarbtn.onclick = () => {
         newtab.setAttribute("src", "./blocked/index.html")
     } else if (urlbartxt.value.endsWith(".onion")) {
         newtab.setAttribute("src", "./blocked/index.html")
+    } else if (urlbartxt.value.startsWith("C:/")) {
+        newtab.setAttribute("src", "file://" + urlbartxt.value)
+    } else if (urlbartxt.value.startsWith("C:\\")) {
+        newtab.setAttribute("src", "file://" + urlbartxt.value)
     } else {
         newtab.setAttribute("src", "https://" + urlbartxt.value)
     }
@@ -120,6 +160,7 @@ function loadColors() {
     const navbar2 = document.querySelector('.navbar-bordered')
     const settingsbox = document.querySelector('.settings-box')
     const sidebar = document.querySelector('.sidebar-container')
+    const settingsinnerbox = document.querySelector('.settings-inner-box')
     const gotodomainicon = document.querySelector('.url-bar-container svg path')
 
     // style-setters
@@ -134,6 +175,8 @@ function loadColors() {
     setStyle(settingsbox, 'background', sbbgcolor)
     setStyle(browserlogo, 'border-color', blbcolor)
     setStyle(settingsbox, 'border-color', sbbccolor)
+    setStyle(settingsinnerbox, 'background', sbbgcolor)
+    setStyle(settingsinnerbox, 'border-color', sbbccolor)
 }
 
 function setStyle(element, styleval, value) {
@@ -154,6 +197,9 @@ forwardb.onclick = () => {
 
 dtbtn.onclick = () => {
     app.window.devtools()
+    webview.openDevTools({
+        node: "right"
+    })
 }
 
 reloadb.onclick = () => {
@@ -165,3 +211,33 @@ backb.onclick = () => {
         webview.goBack()
     }
 }
+
+const themeinput = document.getElementById("themefileinput")
+const themebutton = document.getElementById("applythemebtn")
+
+themebutton.onclick = () => {
+    themeinput.click()
+}
+
+var themeresult
+var fr = new FileReader()
+
+themeinput.addEventListener("change", function() {
+    if (themeinput.value) {
+        fr.onload = function() {
+            themeresult = fr.result
+            if (themeresult.includes("navbar-background")) {
+                const elem = document.querySelector(".navbar-container")
+                const color = themeresult.substring(themeresult.indexOf(":") + 1).replace(";", "")
+                setStyle(elem, 'background', color)
+            }
+
+            if (themeresult.includes("navbar-border")) {
+                const elem = document.querySelector(".navbar-bordered")
+                const color = themeresult.substring(themeresult.indexOf(":") + 1).replace(";", "")
+                setStyle(elem, 'border-color', color)
+            }
+        }
+        fr.readAsText(this.files[0])
+    }
+})

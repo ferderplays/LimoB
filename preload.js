@@ -20,10 +20,14 @@ const API = {
     minimize: () => ipcRenderer.send("app/minimize"),
     maximize: () => ipcRenderer.send("app/maximize"), 
     devtools: () => ipcRenderer.send("app/devtools"),
+    utilsimpl: () => ipcRenderer.send("app/utilsimpl"),
+    rwidget: () => ipcRenderer.send("app/redditwidget"),
     ttwidget: () => ipcRenderer.send("app/tiktokwidget"),
     nfwidget: () => ipcRenderer.send("app/netflixwidget"),
     dscwidget: () => ipcRenderer.send("app/discordwidget"), 
-    igwidget: () => ipcRenderer.send("app/instagramwidget")
+    igwidget: () => ipcRenderer.send("app/instagramwidget"),
+    hpwidget: () => ipcRenderer.send("app/headphoneswidget"),
+    spwrwidget: () => ipcRenderer.send("app/steampoweredwidget")
   }
 }
 

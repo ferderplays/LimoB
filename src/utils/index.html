@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'">-->
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval';">
+        <title>LIMO Browser by LIMO development</title>
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="shortcut icon" href="./assets/limoblogo.png" type="image/x-icon">
+    </head>
+    <body id="tochange">
+        <div class="container">
+            <div>
+                <span class="cpu-impl-span">CPU:</span>
+                <span class="cpu-usage" id="cpuusage"></span>
+            </div>
+            <div>
+                <span class="gpu-impl-span">GPU:</span>
+                <span class="gpu-usage" id="gpuusage"></span>
+            </div>
+        </div>
+        <script>
+            const { ipcRenderer } = require('electron')
+            ipcRenderer.on("cpu", (event, data) => {
+                document.getElementById("cpuusage").innerText = data
+            })
+            ipcRenderer.on("gpu", (event, data) => {
+                document.getElementById("gpuusage").innerText = data
+            })
+        </script>
+    </body>
+</html>
